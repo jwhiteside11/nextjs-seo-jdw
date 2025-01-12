@@ -1,0 +1,65 @@
+
+
+.SmallCardSection {
+  background-color: #0953530c;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  padding: 36px 0;
+
+  & > p {
+    grid-row: 3;
+  }
+
+  h2 {
+    // color: white;
+    margin: 0;
+    color: var(--text-color);
+    font-size: 32px;
+    // letter-spacing: 1px;
+    text-transform: uppercase;
+    z-index: 2;
+  }
+
+  .sm-card-section-inner {
+    width: 76vw;
+  }
+
+  .title-contain {
+    width: 100%;
+    justify-self: center;
+  }
+
+  .card-contain {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    .SmallCard {
+      align-self: stretch;
+    }
+  }
+
+  .tb {
+    font-size: 18px;
+    margin: -24px 0 48px;
+  }
+
+  .bot-bar {
+    // margin: -116px 0 24px;
+    // background-color: #254547;
+    // height: 136px;
+    // width: 102%;
+    // margin-left: -1%;
+    // border-radius: 8px;
+    // z-index: 2;
+    width: 100%;
+    margin: 48px 0 0;
+    // text-align: end;
+    font-size: 18px;
+
+    p {
+      margin: 0;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+
+
+.FullTextElem {
+  display: flex;
+  justify-content: center;
+  padding: 36px 0;
+
+  .full-txt-content {
+    display: flex;
+    flex-direction: column;
+    width: 76vw;
+    line-height: 1.5;
+    font-size: 18px;
+  }
+
+  .blurb {
+    display: flex;
+    flex-direction: column;
+    margin-top: -24px;
+  }
+}

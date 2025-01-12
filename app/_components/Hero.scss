@@ -1,0 +1,81 @@
+
+.Hero {
+  margin-top: -136px;
+  height: 100vh;
+  background-size: cover;
+  background-color: var(--text-color);
+  background-position: center;
+
+  &.sm {
+    height: 62vh;
+    // background-position: center;
+  }
+
+  .hero-overlay {
+    background-color: var(--text-color-60p);
+    height: 100%;
+    // animation: 0.2s ease appear forwards;
+  }
+  
+  .hero-content {
+    color: white;
+    padding-top: 36vh;
+    margin-left: 8vw;
+    opacity: 0;
+    animation: 0.6s ease 0.2s slideUp forwards;
+
+    & > div {
+      margin: 3.6vw;
+    }
+
+    #hero-values {
+      font-size: 3.5vw;
+      width: fit-content;
+      max-width: 54vw;
+      letter-spacing: 2px;
+      font-family: var(--font-rubik);
+      font-weight: 600;
+      margin-bottom: 0.6vw;
+      text-transform: uppercase;
+
+      .border {
+        width: 90%;
+        border-bottom: 2px solid #fff;
+        margin: 2.4% 0% 2.4%;  
+        
+        &.sm {
+          width: 116%;
+        }
+      }
+    }
+
+    #hero-desc {
+      font-family: var(--font-mulish);
+      font-size: 2.0vw;
+      // font-weight: 500;
+      letter-spacing: 1px;
+      margin: 0 3.6vw;
+      width: 42vw;
+    }
+  }
+
+
+
+  @media only screen and (max-width: 720px) {
+    .hero-content {
+      #hero-values {
+        width: 80vw;
+        font-size: 8vw;
+        span {
+          text-wrap: nowrap;
+          display: block;
+        }
+      }
+      #hero-desc {
+        margin-top: 12px;
+        font-size: 4vw;
+        width: 72vw;
+      }
+    }
+  }
+}

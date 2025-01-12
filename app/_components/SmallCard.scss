@@ -1,0 +1,55 @@
+
+.SmallCard {
+  border-radius: 4px;
+  width: 24%;
+  // background-color: white;
+  padding-bottom: 36px;
+  z-index: 3;
+  display: grid;
+  grid-template-rows: 84px 1px auto;
+  align-items: flex-start;
+
+  h3 {
+    color: var(--text-color);
+    text-transform: uppercase;
+    text-align: start;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 24px 0 0 2vw;
+
+    &.tcenter {
+      text-align: center;
+    }
+  }
+
+  ul {
+    margin: 16px 1vw 16px 2vw;
+    list-style-position: outside;
+    padding: 0;
+  }
+  
+  p {
+    margin: 16px 2vw;
+    line-height: 1.3;
+    font-size: 16px;
+  }
+
+  li {
+    margin: 16px 12px;
+    line-height: 1.3;
+    font-size: 16px;
+  }
+
+  hr {
+    width: 80%;
+    margin: 16px 0px 24px 2vw;
+  }
+
+  .children {
+    margin-top: 32px;
+    grid-row: 3;
+  }
+  .children.tcenter {
+    margin-top: 0;
+  }
+}

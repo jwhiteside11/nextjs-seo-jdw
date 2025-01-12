@@ -1,0 +1,72 @@
+.Team {
+  .FullTextElem {
+    padding: 36px 0;
+
+
+    .blurb {
+      margin-top: 0;
+      display: block;
+    }
+  }
+
+  .SplitSectionLeft {
+    hr {
+      display: none;
+    }
+
+    h2 {
+      font-family: var(--font-rubik);
+      font-size: 28px;
+      text-transform: none;
+    }
+
+    h3 {
+      font-size: 20px;
+      text-transform: none;
+      font-weight: 600;
+      text-align: start;
+      margin: -8px 0 8px;
+      color: black;
+    }
+
+    .split-sect-l {
+      grid-template-columns: auto auto;
+      .split-side {
+        justify-self: flex-start;
+
+        .split-content {
+          width: 320px;
+          height: 320px;
+          margin: 0 32px 0 0;
+          // justify-content: flex-start;
+        }
+
+        .split-ov {
+          align-items: flex-start;
+        }
+      }
+    }
+
+    
+
+    @media only screen and (max-width: 480px) {
+      .split-main .blurb {
+        margin-top: 22vw;
+      }
+    }
+
+    @media only screen and (max-width: 900px) {
+      .blurb {
+        width: 76vw;
+        margin-top: 37vw;
+        margin-left: -43vw;
+      }
+
+      .split-side .split-ov > .split-content {
+        width: 40vw;
+        height: 40vw;
+        margin: 0 24px 0 0;
+      }
+    }
+  }
+}

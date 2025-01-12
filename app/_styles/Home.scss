@@ -1,0 +1,121 @@
+
+  
+// @keyframes slideUp {
+//   from {
+//     opacity: 0;
+//     transform: translateY(-480px);
+//   }
+// }
+
+.Home {
+  // .LargeCard {
+  //   transform: translateY(0px);
+  //   opacity: 1;
+  //   animation: slideUp linear;
+  //   animation-timeline: view();
+  //   animation-range: entry;
+  // }
+  
+  .SmallCardSection {
+    .SmallCard {
+      grid-template-rows: 64px auto;
+
+      p {
+        text-align: center;
+        font-weight: 600;
+        margin-top: -8px;
+        margin-bottom: 16px;
+      }
+    }
+
+    a {
+      color: var(--text-color);
+      font-weight: 600;
+      width: fit-content;
+      display: block;
+      overflow: hidden;
+
+      &:hover .underrule {
+        transform: translate3D(0%, 0, 0);
+        height: 1px;
+      }
+      
+      .underrule {
+        border: 1px solid var(--text-color);
+        width: 100%;
+        margin: 8px 0;
+        transform: translate3D(-102%, 0, 0);
+        transition: transform 0.3s ease-out;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 900px) {
+    .SmallCardSection .card-contain {
+      display: grid;
+      grid-template-columns: auto auto;
+      grid-template-rows: auto auto;
+      // justify-content: center;
+
+      .SmallCard {
+        width: 100%;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 480px) {
+    .SmallCardSection .card-contain {
+      display: grid;
+      grid-template-columns: auto;
+      grid-template-rows: auto;
+      // justify-content: center;
+
+      .SmallCard {
+        width: 100%;
+      }
+    }
+  }
+
+}
+
+// .aos {
+//   opacity: 0;
+//   transform: translateY(48px);
+//   transition: all 0.4s ease;
+  
+//   &.view {
+//     opacity: 1;
+//     transform: translateY(0px);
+//   }
+  
+//   &.hide {
+//     opacity: 0;
+//     transform: translateY(48px);
+
+//   }
+// }
+
+
+
+/* Animations */
+
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(2%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

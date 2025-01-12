@@ -1,0 +1,143 @@
+
+.Header {
+  color: white;
+  position: sticky;
+  top: 0px;
+  z-index: 10;
+
+  .inner {
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 6vw;
+
+    & > div, & > a {
+      z-index: 11;
+    }
+  
+    & > .header-bg {
+      position: absolute;
+      background-color: var(--main-color);
+      height: 100px;
+      width: 100%;
+      z-index: 10;
+      margin-left: -6vw;
+    }
+  }
+
+  .logo {
+    font-size: 28px;
+    // text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: var(--font-mulish);
+    font-weight: 600;
+
+    span {
+      display: block;
+    }
+  }
+
+  .links, .sidebar-inner {
+    font-family: var(--font-nunito);
+    font-size: 18px;
+    letter-spacing: 1px;
+    display: flex;
+
+    a {
+      margin: 0 16px;
+      padding-top: 20px;
+      overflow: hidden;
+
+      &:hover .underrule, .underrule.chosen {
+        transform: translate3D(0%, 0, 0);
+        height: 1px;
+      }
+      
+      .underrule {
+        border: 1px solid white;
+        width: 100%;
+        margin: 8px 0;
+        transform: translate3D(-102%, 0, 0);
+        transition: transform 0.2s ease-out;
+      }
+    }
+  }
+
+  .download-outer {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    top: -26px;
+  }
+
+  #h-download { 
+    display: block;
+    font-size: 12px;
+    font-family: var(--font-nunito);
+    text-transform: uppercase;
+    width: fit-content;
+    margin: 0;
+
+    .download-contain { 
+      text-align: end;
+      padding: 0;
+      margin-right: 16px;
+      display: flex;
+
+      svg {
+        width: 13px;
+        height: 13px;
+        margin-left: 8px;
+      }
+    }
+  }
+
+  .menu, .sidebar {
+    display: none;
+  }
+
+  .sidebar {
+    background-color: var(--second-color);
+    padding-bottom: 16px;
+    padding-right: calc(6vw - 16px);
+    // padding-bottom: 16px;
+    a {
+      display: block;
+      width:fit-content;
+      text-align: end;
+    }
+  }
+
+  .menu:hover {
+    cursor: pointer;
+  }
+
+  .sidebar.show {
+    display: block;
+  }
+
+  .sidebar.hidden, .menu.hidden {
+    display: none;
+  }
+
+  .sidebar-inner {
+    flex-direction: column;
+    align-items: end;
+  }
+
+
+  @media only screen and (max-width: 900px) {
+    .logo {
+      margin-left: 16px;
+    }
+    .links {
+      display: none;
+    }
+    .menu, .sidebar {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,63 @@
+
+
+.LargeCardSection {
+  display: grid;
+  grid-template-rows: auto auto;
+  background-color: var(--text-color-20p);
+  justify-items: center;
+  padding: 36px 0;
+
+  .lg-card-section-content {
+    display: flex;
+    flex-direction: row;
+    width: 76vw;
+    justify-content: space-between;
+    align-items: center;
+    // margin: -108px 0 96px 0;
+    // margin: 96px 0;
+  }
+
+  .LargeCard {
+    align-self: stretch;
+  }
+
+  .lg-title {
+    width: 76vw;
+    // margin: 96px 0 108px;
+    margin: 0 0 48px;
+  }
+
+  // h2 {
+  //   // color: white;
+  //   margin: 0;
+  //   color: #095353;
+  //   font-size: 32px;
+  //   // letter-spacing: 1px;
+  //   text-transform: uppercase;
+  //   z-index: 2;
+  // }
+
+  hr {
+    // margin: 16px 0 48px;
+    margin: 16px 0 0;
+    border: none;
+    border-bottom: 1px solid #b4b4b4;
+    // border-color: gray;
+  }
+
+  @media only screen and (max-width: 900px) {
+    .lg-card-section-content {
+      // width: 92vw;
+      flex-direction: column;
+      .LargeCard {
+        width: 100%;
+        margin-bottom: 36px;
+
+        h2 {
+          font-size: 28px;
+          text-wrap: nowrap;
+        }
+      }
+    }
+  }
+}
