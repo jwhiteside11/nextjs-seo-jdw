@@ -1,20 +1,17 @@
 "use client";
 
-import Head from 'next/head';
 import Link from 'next/link';
 import Header from './_components/Header';
 import hero from './_images/gears.jpg';
 import mountain from './_images/mountain.jpg';
-// import { useEffect } from 'react';
 import Footer from './_components/Footer';
 import FullWidthTextElem from './_components/FullWidthTextElem';
-import SplitSectionLeft from './_components/SplitSectionLeft';
 import LargeCard from './_components/LargeCard';
 import Hero from './_components/Hero';
 import SmallCard from './_components/SmallCard';
 import SmallCardSection from './_components/SmallCardSection';
 import LargeCardSection from './_components/LargeCardSection';
-import AnimateOnScroll, { AppearOnScrollSlideUp } from './_components/AnimateOnScroll';
+import { AppearOnScrollSlideUp } from './_components/AnimateOnScroll';
 
 const lorem = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.';
 
