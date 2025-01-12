@@ -14,6 +14,7 @@ import LargeCardSection from './_components/LargeCardSection';
 import { AppearOnScrollSlideUp } from './_components/AnimateOnScroll';
 
 const lorem = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.';
+const loremSM = 'Lorem ipsum dolor sit amet...';
 
 const WhoWeAre = () => {
   return (
@@ -26,37 +27,37 @@ const WhoWeAre = () => {
 
 const InvestmentApproach = () => {
   return (
-    <SmallCardSection title={'Our Approach'} top_blurb={<p>{lorem}</p>} bot_blurb={<Link href="approach"><p>Please click here to learn more.</p><div className='underrule'></div></Link>}>
+    <SmallCardSection title={'Our Approach'} top_blurb={<p>{lorem}</p>} bot_blurb={<Link href="/example-page"><p>Please click here to learn more.</p><div className='underrule'></div></Link>}>
 
-      <SmallCard title={'Size'} titleCenter>
+      <SmallCard title={'Small Card 1'} titleCenter>
         <ul>
-          <li>Revenues: $5-$100 M</li>
-          <li>EBITDA: $1-$10 M</li>
-          <li>Investment check: $5-$100 M</li>
+          <li>{loremSM}</li>
+          <li>{loremSM}</li>
+          <li>{loremSM}</li>
         </ul>
       </SmallCard>
 
-      <SmallCard title={'Structure'} titleCenter>
+      <SmallCard title={'SM Card 2'} titleCenter>
         <ul>
-          <li>Majority recapitalizations</li>
-          <li>Closely held businesses seeking first time institutional capital</li>
+          <li>{loremSM}</li>
+          <li>{loremSM}</li>
         </ul>
       </SmallCard>
 
-      <SmallCard title={'Focus Areas'} titleCenter>
+      <SmallCard title={'SC3'} titleCenter>
         <ul>
-          <li>Manufacturing</li>
-          <li>Value-added distribution</li>
-          <li>B2B services</li>
+          <li>{loremSM}</li>
+          <li>{loremSM}</li>
+          <li>{loremSM}</li>
         </ul>
       </SmallCard>
 
-      <SmallCard title={'Investment Attributes'} titleCenter>
+      <SmallCard title={'Small Card #4'} titleCenter>
         <ul>
-          <li>Reoccurring Demand Profile</li>
-          <li>High Customer Retention</li>
-          <li>Proven Management Team</li>
-          <li>Fragmented Markets</li>
+          <li>{loremSM}</li>
+          <li>{loremSM}</li>
+          <li>{loremSM}</li>
+          <li>{loremSM}</li>
         </ul>
       </SmallCard>
     </SmallCardSection>
@@ -68,14 +69,14 @@ const BankerOwnerCards = () => {
     <LargeCardSection>
 
       <AppearOnScrollSlideUp>
-        <LargeCard title={"For Bankers"} btn_link={"/for-bankers"}>
-          <p>We bring patient capital combined with significant investing and operating experience to invest in family/founder-owned companies. Our experiences, resources, and relationships within the industrial sector allows us to be focused and complete transactions with speed and certainty.</p>
+        <LargeCard title={"Big card #1"} btn_link={"/example-page"}>
+          <p>{lorem}</p>
         </LargeCard>
       </AppearOnScrollSlideUp>
 
       <AppearOnScrollSlideUp>
-        <LargeCard title={"For Owners"} btn_link={"/for-owners"}>
-          <p>We are operationally-focused partners committed to adding long-term value to the business you have built. We create collaborative partnerships with management teams, support in accelerating growth, and nurture employees by providing them meaningful incentives.</p>
+        <LargeCard title={"Big card #2"} btn_link={"/example-page"}>
+          <p>{lorem}</p>
         </LargeCard>
       </AppearOnScrollSlideUp>
 

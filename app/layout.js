@@ -1,6 +1,6 @@
 import "./_styles/globals.scss";
 import "./_styles/Home.scss";
-import "./_styles/Team.scss";
+import "./_styles/ExamplePage.scss";
 import "./_components/Header.scss";
 import "./_components/Footer.scss";
 import "./_components/Hero.scss";
