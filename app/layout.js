@@ -10,25 +10,29 @@ import "./_components/SmallCard.scss";
 import "./_components/LargeCard.scss";
 import "./_components/LargeCardSection.scss";
 import "./_components/SmallCardSection.scss";
-import { Rubik, Mulish, Nunito } from "next/font/google"
+import { Rajdhani, Raleway, Maven_Pro } from "next/font/google"
+import Head from "next/head";
 
-const rubik = Rubik({
+// Utilize AI font pairing to generate set of fonts
+// https://fontjoy.com/
+
+const fdisplay = Rajdhani({
   subsets: ['latin'],
-  style: ['italic', 'normal'],
+  style: ['normal'],
   weight: ["400", "600"],
-  variable: "--font-rubik"
+  variable: "--font-display"
 });
 
-const mulish = Mulish({
+const fcaption = Raleway({
   subsets: ['latin'],
-  weight: ["400", "600", "800", "1000"],
-  variable: "--font-mulish"
+  weight: ["400", "500", "700"],
+  variable: "--font-caption"
 });
 
-const nunito = Nunito({
+const ftext = Maven_Pro({
   subsets: ['latin'],
   weight: ["400", "600", "700", "800"],
-  variable: "--font-nunito"
+  variable: "--font-text"
 });
 
 // Meta content for SEO
@@ -55,8 +59,8 @@ export const metadata = {
       {
         url: thumbnail,
         secureUrl: thumbnail,
-        width: 197,
-        height: 197,
+        width: 192,
+        height: 192,
         alt: title,
       },
     ],
@@ -72,10 +76,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <Head>
-        {/* Generate JSON-LD for SEO -> https://webcode.tools/structured-data-generator/ */}
-      </Head>
-      <body className={`${rubik.variable} ${mulish.variable} ${nunito.variable}`}>
+      {/* Generate JSON-LD for SEO -> https://webcode.tools/structured-data-generator/ */}
+      <body className={`${fdisplay.variable} ${fcaption.variable} ${ftext.variable}`}>
         {children}
       </body>
     </html>

@@ -1,5 +1,5 @@
 {
-  "name": "winterford-cna",
+  "name": "next-seo-template-jdw",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,10 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "14.2.11",
+    "next": "^14.2.23",
     "react": "^18",
     "react-dom": "^18",
-    "react-visibility-sensor": "^5.1.1",
     "sass": "^1.78.0"
   },
   "devDependencies": {

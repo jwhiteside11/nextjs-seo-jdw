@@ -1,13 +1,16 @@
 /* globals */
 
 :root {
-  --full-width: calc(100vw - (100% - 100vw));
-  --main-color: #224a4e;
-  --second-color: #204348;
-  --text-color: #095353;
-  --text-color-20p: #09535333;
-  --text-color-60p: #095353ae;
-  --hover-dark: #1e4747;
+  // theme colors
+  --bg-color: #f1f1f1;
+  --main-color: #273250;
+  --second-color: #222c47;
+  --text-color: #293b6b;
+  --text-color-20p: #293b6b33;
+  --text-color-60p: #293b6bae;
+  --hover-light: #35436d;
+  --hover-dark: #1f2b50;
+  // responsive UI thresholds
   --phone-max: 480px;
   --tablet-max: 768px;
 }
@@ -17,7 +20,7 @@ body {
   padding: 0;
   margin: 0;
   /* font-family: Helvetica Neue, sans-serif; */
-  background-color: #f1f1f1;
+  background-color: var(--bg-color);
 }
 
 a {
@@ -40,7 +43,7 @@ img {
 }
 
 h2 {
-  font-family: var(--font-rubik);
+  font-family: var(--font-display);
   color: var(--text-color);
   margin: 0;
   font-size: 32px;
@@ -50,7 +53,7 @@ h2 {
 }
 
 h3 {
-  font-family: var(--font-nunito);
+  font-family: var(--font-caption);
   color: var(--text-color);
   text-transform: uppercase;
   text-align: center;
@@ -60,7 +63,7 @@ h3 {
 }
 
 p, div {
-  font-family: var(--font-mulish);
+  font-family: var(--font-text);
   line-height: 1.5;
 }
 

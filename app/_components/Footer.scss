@@ -69,8 +69,8 @@
     height: 24px;
     opacity: 0.85;
     margin-left: 12px;
-    transition: 0.1s ease opacity;
-    display: block;
+    transition: opacity 0.1s ease;
+    // display: block;
   }
 
   .wf {
@@ -87,7 +87,7 @@
       // opacity: 0.85;
       // margin-left: 12px;
       // transition: 0.1s ease opacity;
-      display: block;
+      // display: block;
     }
   }
 

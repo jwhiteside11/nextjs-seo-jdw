@@ -2,8 +2,29 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import MenuSVG from '../_svg/MenuSVG';
+
+
+const NavLink = ({main, pathname, route, content}) => {
+  return (
+    <Link href={route}>
+      <span>{content}</span>
+      <div className={`underrule ${main && pathname == route ? 'chosen' : ''}`}></div>
+    </Link>
+  );
+};
+
+const NavContent = ({main, pathname}) => {
+  return (
+    <>
+      <NavLink main={main} pathname={pathname} route="/example-page" content={"EXAMPLE #1"} />
+      <NavLink main={main} pathname={pathname} route="/example-page" content={"EXAMPLE #2"} />
+      <NavLink main={main} pathname={pathname} route="/example-page" content={"EXAMPLE #3"} />
+      <NavLink main={main} pathname={pathname} route="/example-page" content={"EXAMPLE #4"} />
+    </>
+  )
+};
 
 export default function Header({active, main = true}) {
   // Sidebar in mobile navbar
@@ -23,29 +44,11 @@ export default function Header({active, main = true}) {
   // Use path to highlight active route in UI
   const pathname = usePathname();
 
-  const NavLink = useMemo(({route, content}) => {
-    <Link href={route}>
-      <span>{content}</span>
-      <div className={`underrule ${main && pathname == route ? 'chosen' : ''}`}></div>
-    </Link>
-  }, []);
-
-  const NavContent = useMemo(() => {
-    return (
-      <>
-        <NavLink route="/example-page" content={"EXAMPLE #1"} />
-        <NavLink route="/example-page" content={"EXAMPLE #2"} />
-        <NavLink route="/example-page" content={"EXAMPLE #3"} />
-        <NavLink route="/example-page" content={"EXAMPLE #4"} />
-      </>
-    )
-  }, [main, pathname]);
-
   return (
     <header className="Header">
       <div className={`sidebar ${sideBarVisible ? 'show-side' : 'hidden'}`}>
         <div className='sidebar-inner'>
-          <NavContent />
+          <NavContent main={main} pathname={pathname}/>
         </div>
       </div>
 
@@ -54,13 +57,13 @@ export default function Header({active, main = true}) {
 
         <Link href="/">
           <div className='logo' style={active ? {scale: `${(115.0 - scrollProg * 15)}%`} : {}}>
-            <span>Winterford</span>
+            <span>Example Inc.</span>
             {/* <span>Capital</span> */}
           </div>
         </Link>
 
         <div className='links' style={active ? {scale: `${(110.0 - scrollProg * 10)}%`} : {}}>
-          <NavContent />
+          <NavContent main={main} pathname={pathname}/>
         </div>
 
         <div className={`menu ${main ? 'show': 'hidden'}`} onClick={() => setSideBarVisible(!sideBarVisible)}>

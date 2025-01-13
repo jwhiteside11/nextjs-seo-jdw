@@ -13,7 +13,7 @@ const LargeCard = ({children, title, btn_link}) => {
       {children}
 
       { btn_link && 
-      <Link href="/for-bankers">
+      <Link href={btn_link}>
         <div className='m-button'>
           Learn More
         </div>

@@ -1,40 +1,53 @@
-// VisibilitySensor.jsx
-// https://codesandbox.io/p/sandbox/react-spring-scroll-ldxd3?file=%2Fsrc%2Fcomponents%2FVisibilitySensor.jsx%3A1%2C1-45%2C33
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
-import VisibilitySensor from "react-visibility-sensor";
+const VisibilitySensor = ({children, rootMargin = "0px", visibility = 1, onChange = () => {}}) => {
+  const targetRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => { onChange(entries[0].isIntersecting); },
+      {
+        rootMargin, // Margin around the root
+        threshold: visibility, // Percentage of the target that needs to be visible
+      }
+    );
+
+    if (targetRef.current) {
+      observer.observe(targetRef.current);
+    }
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [rootMargin, visibility, onChange]);
+
+
+  return (
+    <div ref={targetRef} style={{width: "fit-content"}}>
+      {children}
+    </div>
+  );
+}
 
 
 const AnimateOnScroll = ({children, duration = 400, delay = 0, from = {}, to = {}}) => {
   const [active, setActive] = useState(true);
-  const [windowHeight, setWindowHeight] = useState(0);
-  const [animatedClasses, setAnimatedClasses] = useState("hide");
-
-  const resize = useCallback(() => setWindowHeight(window.innerHeight), []);
-
-  useEffect(() => { 
-    resize(); 
-    window.addEventListener("resize", resize, {once: true}); 
-    return () => window.removeEventListener("resize", resize, {once: true})
-  }, [resize]);
   
   const startAnimation = useCallback(() => {
     setActive(false);
-    setAnimatedClasses("view");
   }, []);
 
   const endAnimation = useCallback(() => {
     setActive(true);
-    setAnimatedClasses("hide");
   }, []);
 
   const animationStyle = useMemo(() => active ? {...from} : {...to}, [active, from, to]);
 
   return (
-    <VisibilitySensor active={true} partialVisibility 
-      offset={active ? {bottom: Math.floor(windowHeight / 4)} : {top: 0}}
+    <VisibilitySensor visibility={0.01}
+      rootMargin={active ? `0px 0px -25% 0px` : '0px'}
       onChange={isVisible => (isVisible ? startAnimation() : endAnimation())}>
-      <div style={{transition: `all ${duration}ms ease ${delay}ms`, ...animationStyle}}>
+      <div style={{width: "fit-content", transition: `all ${duration}ms ease ${delay}ms`, ...animationStyle}}>
         {children}
       </div>
     </VisibilitySensor>
