@@ -30,13 +30,13 @@ bash devscripts/deploy.sh
 
 ## Project Structure - /app
 
-**_components/** Reusable UI components, built w/ React.
-**_images/** Images being used in the code base.
-**_styles/** CSS stylesheets, one for each page and one global.
-**_svg/** Reusable SVG React components.
-**example-page/** An example of how to set up a route/page. Each folder representing a route have it's own page.js.
-**layout.js** Metadata and fonts HOC. Code in the layout.js file is visible on every page.
-**page.js** Home page, compiles to index.html.
-**robots.js** Generates a robots.txt file.
-**sitemap.js** Generates a sitemap.xml file.
+- **_components/** - Reusable UI components, built w/ React.
+- **_images/** - Images being used in the code base.
+- **_styles/** - CSS stylesheets, one for each page and one global.
+- **_svg/** - Reusable SVG React components.
+- **example-page/** - An example of how to set up a route/page. Each folder representing a route have it's own page.js.
+- **layout.js** - Metadata and fonts HOC. Code in the layout.js file is visible on every page.
+- **page.js** - Home page, compiles to index.html.
+- **robots.js** - Generates a robots.txt file.
+- **sitemap.js** - Generates a sitemap.xml file.
 
