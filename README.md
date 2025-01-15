@@ -28,7 +28,9 @@ npm run dev
 yarn dev
 ```
 
-## Project Structure - /app
+## Project Structure
+
+### /app
 
 - **_components/** - Reusable UI components, built w/ React.
 - **_images/** - Images being used in the code base.
@@ -40,3 +42,8 @@ yarn dev
 - **robots.js** - Generates a robots.txt file.
 - **sitemap.js** - Generates a sitemap.xml file.
 
+### /public
+The public folder contains static content that should ultimately be publicly available at it's own URL (determined by it's filename) on the website. For example, `www.example.com/example.pdf` would link to the `example.pdf` file.
+
+### next.config.mjs
+Contains environment variables assigned using the build script (title, description, etc...).
