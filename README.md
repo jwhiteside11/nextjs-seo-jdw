@@ -1,16 +1,14 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app) and a custom template (https://github.com/jwhiteside11/nextjs-seo-jdw).
 
 ## Getting Started
 
-First, install the necessary node_modules:
+To build the bootstrapped NextJS app:
 
 ```bash
-npm install
-# or
-yarn install
+bash devscripts/create-next-jdw.sh my-app
 ```
 
-First, run the development server:
+To run the development server:
 
 ```bash
 npm run dev
@@ -18,16 +16,27 @@ npm run dev
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+To generate link preview and favicon images:
 
-## Learn More
+```bash
+bash devscripts/create-favicon.sh input.jpeg
+```
 
-To learn more about Next.js, take a look at the following resources:
+To deploy app to AWS Cloudfront:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+bash devscripts/deploy.sh
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Project Structure - /app
 
-## Dev notes
+**_components/** Reusable UI components, built w/ React.
+**_images/** Images being used in the code base.
+**_styles/** CSS stylesheets, one for each page and one global.
+**_svg/** Reusable SVG React components.
+**example-page/** An example of how to set up a route/page. Each folder representing a route have it's own page.js.
+**layout.js** Metadata and fonts HOC. Code in the layout.js file is visible on every page.
+**page.js** Home page, compiles to index.html.
+**robots.js** Generates a robots.txt file.
+**sitemap.js** Generates a sitemap.xml file.
 

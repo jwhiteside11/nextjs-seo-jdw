@@ -40,6 +40,8 @@ const title = process.env.APP_TITLE;
 const description = process.env.APP_DESC;
 const keywords = process.env.APP_KEYWORDS;
 const thumbnail = process.env.APP_THUMBNAIL;
+const thumbnail64 = process.env.APP_THUMBNAIL_64;
+const thumbnail192 = process.env.APP_THUMBNAIL_192;
 const PROD_URL = process.env.APP_PROD_URL;
 
 // Built-in nextjs metadata
@@ -57,12 +59,26 @@ export const metadata = {
     url: PROD_URL,
     images: [
       {
-        url: thumbnail,
-        secureUrl: thumbnail,
+        url: thumbnail64,
+        secureUrl: thumbnail64,
+        width: 64,
+        height: 64,
+        alt: title,
+      },
+      {
+        url: thumbnail192,
+        secureUrl: thumbnail192,
         width: 192,
         height: 192,
         alt: title,
       },
+      {
+        url: thumbnail,
+        secureUrl: thumbnail,
+        width: 512,
+        height: 512,
+        alt: title,
+      }
     ],
     type: "website",
     siteName: title,
